@@ -1,6 +1,6 @@
 // React
 import React, { Component } from 'react';
-
+import Values from './Values';
 
 // svgMap
 import svgMap from 'svgmap';
@@ -17,6 +17,7 @@ class App extends Component {
       const mySvgMap = new svgMap({
         targetElementID: "svgMap",
         mouseWheelZoomEnabled : false , 
+        touchLink : false,
         data: {
           data: {
            id: {
@@ -51,6 +52,7 @@ class App extends Component {
     return (
       <div className='app'>
         <div id='svgMap'></div>
+        <Values></Values>
       </div>
     );
   }

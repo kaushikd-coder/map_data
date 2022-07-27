@@ -3,3 +3,32 @@
     margin : 0; 
     padding: 0;
 }
+.main
+{
+    display: flex;
+    justify-content: center;
+    background-color: #D9ECFF;
+    height: 10vh;
+    align-items: center;
+    flex-direction: column;
+}
+.values
+{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+.colors
+{
+    width: 80%;
+    height: 2vh;
+    background: hsla(19, 100%, 93%, 1);
+
+    background: linear-gradient(360deg, hsla(19, 100%, 93%, 1) 0%, hsla(345, 100%, 40%, 1) 100%);
+
+    background: -moz-linear-gradient(360deg, hsla(19, 100%, 93%, 1) 0%, hsla(345, 100%, 40%, 1) 100%);
+
+    background: -webkit-linear-gradient(360deg, hsla(19, 100%, 93%, 1) 0%, hsla(345, 100%, 40%, 1) 100%);
+
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFE5D9", endColorstr="#CC0033", GradientType=1 );
+}
