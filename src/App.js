@@ -1,25 +1,59 @@
-import logo from './logo.svg';
-import './App.css';
+// React
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+// svgMap
+import svgMap from 'svgmap';
+import 'svgmap/dist/svgMap.min.css';
+
+//values for the map
+import {values} from "./Data/data"
+
+class App extends Component {
+
+  componentDidMount() {
+    if (!this.svgMap) {
+      //initializing the map
+      const mySvgMap = new svgMap({
+        targetElementID: "svgMap",
+        mouseWheelZoomEnabled : false , 
+        data: {
+          data: {
+           id: {
+             name: "ID",
+             format: "{0}",
+             thousandSeparator: ",",
+           },
+            region: {
+              name: "Region",
+              format: "{0}",
+              thousandSeparator: ",",
+          },
+            data : {
+              name: "Data",
+              format: "{0}",
+              thousandSeparator: ",",
+      
+            },
+            
+           
+          },
+          applyData: "data",
+          values: values,
+        },
+      });
+
+      this.svgMap = mySvgMap;
+    }
+  }
+
+  render() {
+    return (
+      <div className='app'>
+        <div id='svgMap'></div>
+      </div>
+    );
+  }
 }
 
 export default App;
